@@ -1,0 +1,36 @@
+/ Program to compute change in dollars and cents
+*Author Isabell Mwangi, isabellmwangi(at)gmail(dot)com
+/
+
+import java.util.Scanner;
+public class ComputeChange
+{
+  public static void main(String[] args)
+  {
+  Scanner input = new Scanner(System.in);//input user data
+  System.out.print("Enter amount as a decimal number, e.g. 11.56: ");//user prompt
+  
+  double totalDollars = input.nextDouble(); //accept decimal input
+  
+  int totalCents = (int)(totalDollars * 100); //convert dollars into cents and casts into integer
+     
+  int dollars = totalCents / 100; //converts cents into dollars
+     
+  totalCents = totalCents % 100; //find remaining cents
+  
+  int quarters = totalCents / 25; //find quaters by dividing cents by 25
+  totalCents = totalCents % 25; //remaining cents
+  
+  int dimes = totalCents / 10; //find dimes
+  totalCents= totalCents % 10;
+  
+  int nickels = totalCents / 5; //find pennies
+  int pennies = totalCents % 5; 
+  
+  System.out.println( totalDollars + " dollars is equivalent to " +  dollars + " dollars, " + quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels and "+pennies+" pennies.");
+  
+  input.close();//close the scanner object
+  
+  }//end main 
+  
+  }//end ComputeChange class
